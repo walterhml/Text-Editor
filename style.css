@@ -1,95 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>#2 - Online Text Editor | AsmrProg</title>
-</head>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-<body>
+body{
+    background-color: #338cf4;
+}
 
-    <div class="container">
-        <div class="options">
-            <button id="bold" class="option-button format">
-                <i class="fa-solid fa-bold"></i>
-            </button>
-            <button id="superscript" class="option-button script">
-                <i class="fa-solid fa-superscript"></i>
-            </button>
-            <button id="subscript" class="option-button script">
-                <i class="fa-solid fa-subscript"></i>
-            </button>
+.container{
+    background-color: #fff;
+    width: 90vmin;
+    padding: 50px 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+}
 
-            <button id="insertOrderedList" class="option-button">
-                <div class="fa-solid fa-list-ol"></div>
-            </button>
-            <button id="insertUnorderedList" class="option-button">
-                <i class="fa-solid fa-list"></i>
-            </button>
+.options{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
 
-            <button id="undo" class="option-button">
-                <i class="fa-solid fa-rotate-left"></i>
-            </button>
-            <button id="redo" class="option-button">
-                <i class="fa-solid fa-rotate-right"></i>
-            </button>
+button{
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    border: none;
+    background-color: #fff;
+    outline: none;
+    color: #020929;
+    cursor: pointer;
+}
 
-            <button id="createLink" class="adv-option-button">
-                <i class="fa fa-link"></i>
-            </button>
-            <button id="unlink" class="option-button">
-                <i class="fa fa-unlink"></i>
-            </button>
+select{
+    padding: 7px;
+    border: 1px solid #020929;
+    border-radius: 3px;
+    cursor: pointer;
+}
 
-            <button id="justifyLeft" class="option-button align">
-                <i class="fa-solid fa-align-left"></i>
-            </button>
-            <button id="justifyCenter" class="option-button align">
-                <i class="fa-solid fa-align-center"></i>
-            </button>
-            <button id="justifyRight" class="option-button align">
-                <i class="fa-solid fa-align-right"></i>
-            </button>
-            <button id="justifyFull" class="option-button align">
-                <i class="fa-solid fa-align-justify"></i>
-            </button>
-            <button id="indent" class="option-button spacing">
-                <i class="fa-solid fa-indent"></i>
-            </button>
-            <button id="outdent" class="option-button spacing">
-                <i class="fa-solid fa-outdent"></i>
-            </button>
-            <select id="formatBlock" class="adv-option-button">
-                <option value="H1">H1</option>
-                <option value="H2">H2</option>
-                <option value="H3">H3</option>
-                <option value="H4">H4</option>
-                <option value="H5">H5</option>
-                <option value="H6">H6</option>
-            </select>
-            <select id="fontName" class="adv-option-button"></select>
-            <select id="fontSize" class="adv-option-button"></select>
+.options label,
+.options select{
+    font-family: 'Poppins', sans-serif;
+}
 
-            <div class="input-wrapper">
-                <input type="color" id="foreColor" class="adv-option-button">
-                <label for="foreColor">Font Color</label>
-            </div>
-            <div class="input-wrapper">
-                <input type="color" id="backColor" class="adv-option-button">
-                <label for="backColor">Highlight Color</label>
-            </div>
+input[type="color"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+}
 
-        </div>
-        <div id="text-input" contenteditable="true"></div>
-    </div>
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #020929;
+}
 
-    <script src="script.js"></script>
+input[type="color"]::-moz-color-swatch{
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px #020929;
+}
 
+#text-input{
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    height: 50vh;
+}
 
-</body>
-
-</html>
+.active{
+    background-color: #e0e9ff;
+}
